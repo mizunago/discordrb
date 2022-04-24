@@ -231,6 +231,11 @@ module Discordrb::API
     "#{cdn_url}/role-icons/#{role_id}/#{icon_hash}.#{format}"
   end
 
+  # Make a cover URL for a Scheduled Event.
+  def scheduled_event_cover_url(scheduled_event_id, image_hash, format = 'webp')
+    "#{cdn_url}/guild-events/#{scheduled_event_id}/#{image_hash}.#{format}"
+  end
+
   # Login to the server
   def login(email, password)
     request(
