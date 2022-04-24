@@ -239,6 +239,22 @@ module Discordrb::API
   # make an avatar decoration URL from an avatar decoration ID.
   def avatar_decoration_url(avatar_decoration_id, format = 'png')
     "#{cdn_url}/avatar-decoration-presets/#{avatar_decoration_id}.#{format}"
+
+  # Make a cover URL for a Scheduled Event.
+  def scheduled_event_cover_url(scheduled_event_id, image_hash, format = 'webp')
+    "#{cdn_url}/guild-events/#{scheduled_event_id}/#{image_hash}.#{format}"
+  end
+
+  # Login to the server
+  def login(email, password)
+    request(
+      :auth_login,
+      nil,
+      :post,
+      "#{api_base}/auth/login",
+      email: email,
+      password: password
+    )
   end
 
   # make a static nameplate URL from the nameplate asset.
