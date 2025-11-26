@@ -239,6 +239,7 @@ module Discordrb::API
   # make an avatar decoration URL from an avatar decoration ID.
   def avatar_decoration_url(avatar_decoration_id, format = 'png')
     "#{cdn_url}/avatar-decoration-presets/#{avatar_decoration_id}.#{format}"
+  end
 
   # Make a cover URL for a Scheduled Event.
   def scheduled_event_cover_url(scheduled_event_id, image_hash, format = 'webp')
